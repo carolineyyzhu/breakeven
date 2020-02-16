@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+   font-family: 'strvar';
+   src:font-url('strvar.eot');
+   src:font-url('strvar.eot?#iefix') format('embedded-opentype'),
+   src:font-url('strvar.ttf') format('truetype'),
+   src:font-url('strvar.woff') format('woff'),
+   src:font-url('strvar.svg#strvar') format('svg');
+   font-weight: normal;
+   font-style: normal;
+ }
+ #appheader {
+   font-family: 'strvar';
+ }
