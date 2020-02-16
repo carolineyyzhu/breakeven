@@ -1,14 +1,21 @@
 class PaymentsController < ApplicationController
   def index
-    @payments = Payment.all
+    @person = Person.find(params[:person_id])
+    @payments = @person.payments
+  end
+
+  def show
+    @payment = Payment.find(params[:id])
   end
 
   def create
-    @payments = Payment.find(payment_params)
-    redirect_to @people
+    @person = Person.find(params[:person_id])
+    @payment = Payment.new(payment_params)
+    redirect_to person_path(@person)
   end
 
   def new
+    @person = Person.find(params[person_id])
     @payment = Payment.new
   end
 
