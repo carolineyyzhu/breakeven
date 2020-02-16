@@ -1,9 +1,16 @@
 <h2>People:</h2>
 
-<p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th colspan="1"></th>
+  </tr>
 <%= @people.each do |person| %>
-  <%= person.name %>
+  <tr>
+    <td><%= person.name %></td>
+    <td><%= link_to "Add new payment", controller = 'payment' %></td>
+  </tr>
 <% end %>
-</p>
+</table>
 
 <%= link_to "Add new person", new_person_path(@person) %>
