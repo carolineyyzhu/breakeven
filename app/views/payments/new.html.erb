@@ -1,6 +1,18 @@
-<h2>Log a payment</h2>
+<h2 class="headerbg">Log <%= @person.name %>'s payment</h2>
 
 <%= form_for [@person, @payment] do |form| %>
+  <% if @payment.errors.any? %>
+    <div id = "error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %>
+        are causing issues: </h2>
+      <ul>
+        <%= @payment.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= form.label :description %>:<br>
     <%= form.text_field :description %>
