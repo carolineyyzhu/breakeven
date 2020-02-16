@@ -4,18 +4,18 @@ class PaymentsController < ApplicationController
     @payments = @person.payments
   end
 
-  def show
-    @payment = Payment.find(params[:id])
-  end
-
   def create
     @person = Person.find(params[:person_id])
     @payment = Payment.new(payment_params)
-    redirect_to person_path(@person)
+    if @payment.save
+      redirect_to person_path(@person)
+    else
+      render 'new'
+    end
   end
 
   def new
-    @person = Person.find(params[person_id])
+    @person = Person.find(params[:person_id])
     @payment = Payment.new
   end
 

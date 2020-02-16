@@ -1,4 +1,21 @@
 <h2><%= @person.name %>'s
   Payments:</h2>
-
-<p>Total:</p>
+<%= total = 0 %>
+  <table>
+    <tr>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+    <%= @person.payments.each do |payment| %>
+      <tr>
+        <td><%= payment.description %></td>
+        <td><%= payment.amount %></td>
+        <td><%= payment.timelog %> </td>
+      </tr>
+      <%= total += payment.amount %>
+    <% end %>
+  </table>
+  <p>Total:</p>
+  <p><%= total %></p>
+<% end %>
