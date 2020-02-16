@@ -1,16 +1,23 @@
+<div class = "headerbg">
 <h2>People:</h2>
+</div>
 
 <table>
   <tr>
     <th>Name</th>
-    <th colspan="1"></th>
+    <th colspan="2"></th>
   </tr>
-<%= @people.each do |person| %>
+<% @people.each do |person| %>
   <tr>
     <td><%= person.name %></td>
+    <td><%= link_to "Delete this person", person_path(person), method: :delete, data: {confirm: "Are you sure?"} %></td>
     <td><%= link_to "Add new payment", controller = 'payment' %></td>
   </tr>
 <% end %>
 </table>
 
 <%= link_to "Add new person", new_person_path(@person) %>
+
+<p>
+  <%= link_to "Back", :back %>
+</p>

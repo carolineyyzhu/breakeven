@@ -4,7 +4,11 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(params[:person_id])
+    @person = Person.find(params[:id])
+  end
+
+  def edit
+    @person = Person.find(params[:id])
   end
 
   def create
@@ -16,12 +20,22 @@ class PeopleController < ApplicationController
     end
   end
 
+  def update
+    @person = Person.find(params[:id])
+
+    if @person.update
+      redirect_to people_path
+    else
+      render 'edit'
+    end
+  end
+
   def new
     @person = Person.new
   end
 
   def destroy
-    @person = Person.find(params[:person_id])
+    @person = Person.find(params[:id])
     @person.destroy
     redirect_to people_path
   end

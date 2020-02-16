@@ -1,4 +1,6 @@
+<div class = "headerbg">
 <h2>Add a person:</h2>
+</div>
 
 <%= form_with scope: :person, url: people_path, local:true do |form|%>
   <% if @person.errors.any? %>
@@ -13,10 +15,10 @@
     </div>
   <% end %>
   <p>
-  <%= form.text_field :name %>
+    <%= form.label :name %>:<br>
+    <%= form.text_field :name %>
   </p>
-
   <p>
-  <%= form.submit %>
+    <%= form.submit %>
   </p>
 <% end %>
