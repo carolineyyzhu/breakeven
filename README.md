@@ -1,24 +1,8 @@
-# README
+Instructions for use:
+Ensure that rails is installed on your machine, clone this repo, and run by using the command:
+rails server
+and navigating to localhost:3000 on any browser once the server is open.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+BreakEven is a service to track spending in a relationship, and keep things fair
+between partners. Add people to the relationship, and add payments to monitor spending
+for each person, and track the difference in spending.
